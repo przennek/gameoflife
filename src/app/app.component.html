@@ -3,21 +3,31 @@
   <title>GoL</title>
 </head>
 <body>
-<h1>Stan:
-  <span *ngIf="gState === 0">Nieaktywny</span>
-  <span *ngIf="gState === 1">Aktywny</span>
-  <span *ngIf="gState === 2">Pauza</span>
-</h1>
-<table>
-  <tr *ngFor="let column of this.board.boardFields">
-    <td (click)="this.onClickSetState(field)" [class.alive]="field.state === 1"
-      [class.dead]="field.state === 0"
-      *ngFor="let field of column">
-    </td>
-  </tr>
-</table>
-<button (click)="run()">uruchom</button>
-<button (click)="pause()">pauza</button>
-<button (click)="initialise(2)">restart</button>
+<div class="row">
+  <br/>
+  <div class="col-md-1"></div>
+  <div class="col-md-5">
+    <button class="btn btn-danger" (click)="run()">uruchom</button>
+    <button class="btn btn-warning" (click)="pause()">pauza</button>
+    <button class="btn btn-info" (click)="initialise(2)">restart</button>
+    <button class="btn btn-primary" (click)="oneStep()">krok</button>
+    <h1></h1>
+    <table>
+      <tr *ngFor="let column of this.board.boardFields">
+        <td (click)="this.onClickSetState(field)" [class.alive]="field.state === 1"
+            [class.dead]="field.state === 0"
+            *ngFor="let field of column">
+        </td>
+      </tr>
+    </table>
+    <input type="range" style="width: 400px" [(ngModel)]="probability" name="p2" min="0" max="100" (change)="fillBasedOnProbability()">
+    <b>p</b> =
+    <input type="number" style="width: 45px;" [ngModel]="probability" name="p" disabled>
+    <b>%</b>
+  </div>
+  <div class="col-md-6">
+    <div id="myDiv" style="width: 480px; height: 400px;"></div>
+  </div>
+</div>
 </body>
 </html>

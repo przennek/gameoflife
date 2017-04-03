@@ -18,7 +18,6 @@ export class Board {
     }
   }
 
-  // rampage
   public blankFields() {
     for (var i: number = 0; i < this.width; i++) {
       for (var j: number = 0; j < this.heigth; j++) {
