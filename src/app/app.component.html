@@ -8,9 +8,9 @@
   <div class="col-md-1"></div>
   <div class="col-md-5">
     <button class="btn btn-danger" (click)="run()">uruchom</button>
-    <button class="btn btn-warning" (click)="pause()">pauza</button>
-    <button class="btn btn-info" (click)="initialise(2)">restart</button>
-    <button class="btn btn-primary" (click)="oneStep()">krok</button>
+    <button class="btn" (click)="pause()">pauza</button>
+    <button class="btn btn-warning" (click)="initialise(2)">restart</button>
+    <button class="btn btn-info" (click)="oneStep()">krok</button>
     <h1></h1>
     <table>
       <tr *ngFor="let column of this.board.boardFields">
