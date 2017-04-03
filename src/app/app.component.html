@@ -1,3 +1,23 @@
-<h1>
-  {{title}}
+<html>
+<head>
+  <title>GoL</title>
+</head>
+<body>
+<h1>Stan:
+  <span *ngIf="gState === 0">Nieaktywny</span>
+  <span *ngIf="gState === 1">Aktywny</span>
+  <span *ngIf="gState === 2">Pauza</span>
 </h1>
+<table>
+  <tr *ngFor="let column of this.board.boardFields">
+    <td (click)="this.onClickSetState(field)" [class.alive]="field.state === 1"
+      [class.dead]="field.state === 0"
+      *ngFor="let field of column">
+    </td>
+  </tr>
+</table>
+<button (click)="run()">uruchom</button>
+<button (click)="pause()">pauza</button>
+<button (click)="initialise(2)">restart</button>
+</body>
+</html>

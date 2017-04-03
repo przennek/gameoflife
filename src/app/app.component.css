@@ -1,0 +1,23 @@
+table {
+  /*border: 0px;*/
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  border: none;
+  width: 4px;
+  height: 4px;
+}
+
+tr {
+  border: none;
+}
+
+.alive {
+  background: black;
+}
+
+.dead {
+  background: white;
+}
